@@ -3,7 +3,7 @@ from datetime import date
 def depositar(valor, saldo, extrato):
     if valor > 0:
         saldo += valor
-        extrato += f"[{date.today()}] Depósito: R${valor:.2f}\n"
+        extrato += f"[{date.today()}] Depósito: R$ {valor:.2f}\n"
         print("Depósito realizado com sucesso.\n")
     else:
         print("Falha na operação! O valor informado é inválido.\n")
@@ -16,7 +16,7 @@ def sacar(valor, saldo, extrato, num_saques):
         print("Falha na operação! O valor do saque excede o limite.\n")
     elif valor > 0:
         saldo -= valor
-        extrato += f"[{date.today()}] Saque: R${valor:.2f}\n"
+        extrato += f"[{date.today()}] Saque: R$ {valor:.2f}\n"
         num_saques += 1
         print("Saque realizado com sucesso.\n")
     else:
@@ -26,7 +26,7 @@ def sacar(valor, saldo, extrato, num_saques):
 def exibir_extrato(saldo, extrato):
     print(" EXTRATO ".center(41, "="))
     print("Não foram realizadas movimentações.\n" if not extrato else extrato)
-    print(f"Saldo: R${saldo:.2f}")
+    print(f"Saldo: R$ {saldo:.2f}")
     print("="*41)
     print()  
         
